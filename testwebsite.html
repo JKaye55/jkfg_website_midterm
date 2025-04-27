@@ -8,8 +8,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
-        <!-- Bootstrap CSS v5.2.1 -->
+        <!-- Bootstrap CSS v5.3.2 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -18,15 +17,65 @@
         />
     </head>
 
-    <body>
-        <header>
-            <!-- place navbar here -->
-        </header>
-        <main></main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
-        <!-- Bootstrap JavaScript Libraries -->
+    <body style="background-color: rgb(225, 127, 255);">
+        <nav class="navbar navbar-expand-lg container-fluid" style="background-color: rgb(161, 54, 204);">
+            <div class="container-fluid mb-3 mt-2">
+                <!-- Brand/Logo stays on the left -->
+                <a class="navbar-brand" href="components.html">JKFG</a>
+                
+                <!-- Navbar Toggler for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <!-- Navbar Links (Centered) -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto d-flex gap-2"> <!-- mx-auto centers the <ul> -->
+                        <li class="nav-item"><a href="#home" class="nav-link fs-5">Home</a></li>
+                        <li class="nav-item"><a href="#profile" class="nav-link fs-5">Profile</a></li>
+                        <li class="nav-item"><a href="#education" class="nav-link fs-5">Education</a></li>
+                        <li class="nav-item"><a href="#forte" class="nav-link fs-5">Forte</a></li>
+                        <li class="nav-item"><a href="#creations" class="nav-link fs-5">IT Creations</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link fs-5">Contact Me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+              
+        <!-- Hero Section -->
+        <div class="p-10 h-300">
+            <div class="container-fluid text-center p-15">
+                <h1 class="display-2 fw-bold mt-3">Hi! My name is Kaye</h1>
+                <p class="col-md-8 mx-auto fs-4">"Driven by passion for tech, I'm an IT enthusiast from NU LIPA, proud to embody the Nationalian spirit. At NU LIPA, 'education that works' isn't just a phrase—it's how we shape the future."</p>
+               
+                <div class="row">
+                <!-- Column 1 -->
+            <div class="col-6 col-sm-4 mb-3 text-center">
+                <a href="#home" class="btn btn-light btn-lg d-block">A glimpse into my world.</a>
+            </div>
+            <!-- Column 2 -->
+            <div class="col-6 col-sm-4 mb-3 text-center">
+                <a href="#profile" class="btn btn-light btn-lg d-block">Who’s behind the screen?</a>
+            </div>
+            <!-- Column 3 -->
+            <div class="col-6 col-sm-4 mb-3 text-center">
+                <a href="#education" class="btn btn-light btn-lg d-block">My school timeline, decoded.</a>
+            </div>
+            <!-- Column 4 -->
+            <div class="col-6 col-sm-4 mb-3 text-center">
+                <a href="#forte" class="btn btn-light btn-lg d-block">My abilities, unlocked.</a>
+            </div>
+            <!-- Column 5 -->
+            <div class="col-6 col-sm-4 mb-3 text-center">
+                <a href="#creations" class="btn btn-light btn-lg d-block">My latest collab projects.</a>
+            </div>
+            <!-- Column 6 -->
+            <div class="col-6 col-sm-4 mb-3 text-center">
+                <a href="#contact" class="btn btn-light btn-lg d-block">Ping me a message.</a>
+              </div>
+            </div>
+        </div>
+
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
