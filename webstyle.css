@@ -1,0 +1,155 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Fallback font added */
+    box-sizing: border-box;
+}
+
+/* Container Styling */
+.container-fluid {
+    background-color: #000000; /* Black background color */
+    border: 5px solid #F715AB; /* 5px solid border with pink color */
+    border-radius: 10px; /* Rounds the corners of the border */
+    box-shadow: 0 0 15px 5px rgba(247, 21, 171, 0.75); /* Glow effect around the border */
+}
+.navbar-brand {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+    font-size: 1.5rem;
+    color: transparent; /* Makes the text transparent for gradient */
+    font-weight: bold;
+    text-shadow: none; /* Remove text shadow for clarity */
+    background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Gradient background */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    -webkit-background-clip: text; /* Applies the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    animation:slidebg 5s linear infinite;
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    animation: hoverGradientText 1s infinite; /* Adds hover-specific animation */
+}
+/* Navbar Collapse Styling */
+.navbar-collapse {
+    padding: 20px; /* Reduced padding for better visuals */
+    background-size: cover;
+}
+
+/* Gradient Animation for nav-link */
+.navbar-nav {
+    font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+    font-size: 3.25rem; /* Font size */
+    font-weight: bold; /* Bold font */
+    background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Default gradient */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    -webkit-background-clip: text; /* Applies the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    color: transparent; /* Ensures text is transparent if -webkit isn't supported */
+    animation: gradientText 3s infinite linear; /* Applies gradient animation */
+    transition: background 0.5s ease, opacity 0.5s ease; /* Smooth hover effect */
+}
+/* Ensure Audiowide font is applied to all text inside navbar-nav */
+.navbar-nav .nav-link {
+    font-family: 'Audiowide', sans-serif !important; /* Ensure it applies to links */
+    font-size: 1.5rem; /* Optional: Adjust font size */
+}
+/* Navbar Navigation Styling */
+.navbar-nav {
+    gap: 150px; /* Adds spacing between nav items */
+}
+/* Hover Effect for nav-link with Animation */
+.nav-link:hover, 
+.nav-link:focus {
+    padding-left: 10px;
+    text-decoration: none; /* Removes underline */
+    opacity: 1; /* Ensure full visibility */
+    
+    /* Gradient Animation */
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #42a5f5, #66bb6a, #fdd835); /* Gradient background */
+    background-size: 300%; /* Size for gradient animation */
+    -webkit-background-clip: text; /* Applies gradient to text */
+    -webkit-text-fill-color: transparent; /* Makes text transparent to show the gradient */
+
+    /* Combined Animations */
+    animation: hoverGradientText 3s infinite linear, pulse 1.5s infinite ease-in-out; /* Both animations run together */
+
+    /* Pulse Shadow */
+    box-shadow: 0 0 0 0 rgba(255, 253, 253, 0.5); /* Initial glow effect */
+}
+
+/* Style for the toggle button icon */
+.navbar-toggler-icon {
+    padding: 3px;
+    background-size: 100%; /* Ensures the gradient fits the icon */
+    width: 24px; /* Adjust width of the icon */
+    height: 3px; /* Adjust height (thickness) of the bars */
+    border-radius: 2px; /* Optional: Rounds the edges of the bars */
+    background-color: aliceblue;
+}
+
+/* Hover Effects for the Toggle Button */
+.navbar-toggler:hover {
+    box-shadow: 0 0 10px 5px rgba(146, 1, 203, 0.5); /* Glow effect */
+    animation: pulse 1.5s infinite ease-in-out; /* Pulse animation on hover */
+}
+
+
+/* Gradient Animation Keyframes */
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hover-Specific Gradient Animation Keyframes */
+@keyframes hoverGradientText {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        gap: 50px; /* Reduced gap for smaller screens */
+    }
+
+    .navbar-collapse {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+}
+@keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+  }
+ /* Pulse Animation Keyframes */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 #9201CB; /* Start with no shadow */
+    }
+    50% {
+        box-shadow: 0 0 10px 5px #F715AB; /* Midway with a glow */
+    }
+    100% {
+        box-shadow: 0 0 0 0 #34EDF3; /* End with no shadow */
+    }
+}
