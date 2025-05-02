@@ -269,6 +269,146 @@
         0 0 80px #F715AB; /* Glowing neon effect */
 }
 
+/* About Me Section */
+.about-me-section {
+    background-color: #f8f9fa;
+  }
+  
+  .about-me-title {
+    font-family: 'Exo', sans-serif;
+    font-size: 2.5rem;
+    color: #2d3436;
+  }
+  
+  .about-me-quote {
+    font-size: 1.5rem;
+    color: #555;
+    font-style: italic;
+  }
+  
+  .about-me-description {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .about-me-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+ /* Ensure the row container has proper spacing */
+.row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  /* Card styles for responsiveness */
+  .tourist-card {
+    text-align: center;
+    width: 100%; /* Make sure cards take full column width */
+    height: auto; /* Prevent fixed heights causing issues */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    transform: perspective(900px) rotateX(80deg) translateY(-200px) translateZ(-100px);
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Hover behavior */
+  .tourist-card:hover {
+    transform: perspective(900px) rotateX(0deg) translateY(0) translateZ(0);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  
+  /* Image inside the card */
+  .tourist-card img {
+    transform: translateY(15px);
+    width: 100%; /* Ensure the image is responsive */
+    max-width: 200px; /* Limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+  }
+  
+  /* Text styles */
+  .tourist-card h3 {
+    font-size: 1.5rem;
+    font-family: 'Abel', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 2px rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-left: 100%;
+  }
+  
+  .tourist-card p {
+    font-family: 'Abel', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 10px auto;
+    width: 90%;
+  }
+  
+  /* Individual Card Styles */
+  .card1 {
+    background: linear-gradient(rgb(225, 150, 58), rgb(227, 144, 91));
+  }
+  
+  .card2 {
+    background: linear-gradient(rgb(93, 94, 170), rgb(93, 66, 103));
+  }
+  
+  .card3 {
+    background: linear-gradient(#ff5252, #b33939); /* Card background */
+    margin-left: -100px; /* Moves the card 50px to the left */
+    padding: 20px; /* Keeps spacing inside the card */
+    height: auto; /* Ensures the height adjusts dynamically */
+    width: 100%; /* Keeps the card responsive */
+  }
+  .card4 {
+    background: linear-gradient(rgb(34, 193, 195), rgb(253, 187, 45));
+  }
+  
+  .card5 {
+    background: linear-gradient(rgb(29, 80, 140), rgb(34, 193, 195));
+  }
+  
+  /* Responsive Adjustments */
+  
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .tourist-card img {
+      width: 150px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .tourist-card img {
+      width: 130px;
+    }
+  
+    .tourist-card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .tourist-card p {
+      font-size: 0.9rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
 /* Gradient Animation Keyframes */
 @keyframes gradientText {
     0% {
@@ -294,8 +434,6 @@
         background-position: 0% 0%;
     }
 }
-
-
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
