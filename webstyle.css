@@ -96,7 +96,178 @@
     box-shadow: 0 0 10px 5px rgba(146, 1, 203, 0.5); /* Glow effect */
     animation: pulse 1.5s infinite ease-in-out; /* Pulse animation on hover */
 }
+/* Hero Section */
+.hero-section {
+    max-width: 600px !important; /* Increased width for better layout with !important */
+    height: auto !important; /* Allow height to adjust automatically */
+    margin: 0 auto !important; /* Center the container horizontally */
+    padding: 30px !important; /* Add padding for inner spacing */
+    text-align: center !important; /* Ensure text alignment */
+    background: #070F34 !important; /* Background color */
+    border-radius: 12px !important; /* Add rounded corners for the container */
+    box-shadow: 0 8px 20px #F715AB !important; /* Subtle shadow for depth */
+    perspective: 1200px !important; /* For 3D effect on cards */
+    cursor: pointer !important;
+    display: flex !important; /* Use flexbox for alignment */
+    justify-content: center !important; /* Center card horizontally */
+    align-items: center !important; /* Center card vertically */
+}
 
+/* Card Container */
+.card {
+    width: 550px !important; /* Adjusted width */
+    height: 850px !important; /* Adjusted height for better proportions */
+    margin: 0 auto !important; /* Center card */
+    perspective: 1000px !important; /* 3D perspective for the card */
+    cursor: pointer !important;
+    border-radius: 0.5rem !important; /* Rounded corners */
+    background: #F715AB; /* Card background color */
+    border: 4px solid transparent; /* Border to apply the glow */
+    box-shadow: 0 4px 10px #F715AB; /* Subtle shadow */
+    animation: glow 1.5s infinite alternate; /* Glowing animation */
+}
+
+/* Card Inner */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* Preserve 3D effect */
+    transition: transform 0.6s ease-in-out; /* Smooth flip transition */
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg); /* Flip card on hover */
+}
+
+/* Card Faces */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide back face when flipped */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    border-radius: 0.5rem; /* Match rounded corners */
+    text-align: center;
+    padding: 1rem; /* Add padding to content */
+    box-shadow: 0 4px 10px #0313A6; /* Subtle shadow for depth */
+}
+
+/* Front Face */
+.card-front {
+    background: #5132a7;
+    border: 1px solid #020202;
+    color: white;
+}
+.card-front h3{
+    font-family: 'Audiowide', sans-serif;
+    gap: 20px;
+}
+/* Back Face */
+.card-back {
+    font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+    font-size: 3.25rem; /* Font size */
+    font-weight: bold; /* Bold font */
+    background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Neon gradient */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    animation: wave 6s infinite ease-in-out;
+    border-radius: 0.5rem; /* Rounded corners */
+    transform: rotateY(180deg); /* Flip the back card */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    color: white; /* Text color */
+}
+
+/* Image Styling */
+.card-back img {
+    width: 500px; /* Ensure width and height are equal */
+    height: 460px; /* Ensure width and height are equal */
+    border-radius: 50%; /* Use 50% to create a perfect circle */
+    border: 5px solid white; /* Add white border */
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.2); /* Add shadow */
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+}
+
+/* Back Text Styling */
+.card-back h1 {
+    font-family: "VT323", monospace;
+    font-size: 1.2rem; /* Adjusted font size */
+    margin-bottom: 1rem;
+}
+.card-back h4{
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "MORF" 15,
+      "SHLN" 50;
+  
+}
+
+.card-back p {
+    font-family: monospace;
+    font-size: 1rem; /* Adjusted font size for readability */
+    margin-bottom: 1.5rem;
+    line-height: 1.5; /* Improved line spacing */
+}
+
+/* Call-to-Action Button */
+/* Default State: Lock Icon */
+/* Button styles */
+.btn-light {
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center; /* Center icon and text vertically */
+    text-decoration: none; /* Remove underline */
+    color: #8b5cf6;
+    background: white;
+    border: none;
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-light:hover {
+    background: #6a4bbd; /* Darker violet on hover */
+    color: white; /* Change text color on hover */
+}
+
+/* Default Icon State */
+.icon {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-right: 8px; /* Space between icon and text */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth animation for rotation and neon effect */
+}
+
+/* Default Icon State: Lock */
+.icon::before {
+    content: "\F47B"; /* Unicode for lock icon */
+    font-family: "Bootstrap Icons"; /* Ensure proper font family */
+    color: #8b5cf6; /* Default color */
+}
+
+/* Hover State: Unlock Icon with Neon Effect */
+.btn-light:hover .icon::before {
+    content: "\F600"; /* Unicode for unlock icon */
+    font-family: "Bootstrap Icons"; /* Ensure proper font family */
+    transform: rotate(360deg); /* Add rotation animation */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth animation */
+    color: #9201CB; /* Neon green color for the icon */
+    text-shadow: 
+        0 0 5px #F715AB, 
+        0 0 10px #F715AB, 
+        0 0 20px #F715AB, 
+        0 0 40px #F715AB, 
+        0 0 80px #F715AB; /* Glowing neon effect */
+}
 
 /* Gradient Animation Keyframes */
 @keyframes gradientText {
@@ -151,5 +322,38 @@
     }
     100% {
         box-shadow: 0 0 0 0 #34EDF3; /* End with no shadow */
+    }
+}
+
+/* Gradient background animation */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Mid position */
+    }
+    100% {
+        background-position: 0% 50%; /* End position */
+    }
+}
+
+@keyframes wave {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes glow {
+    from {
+        box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 4px 40px rgba(0, 255, 255, 0.9);
     }
 }
