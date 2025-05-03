@@ -271,26 +271,64 @@
 
 /* About Me Section */
 .about-me-section {
-    background-color: #f8f9fa;
+    background-color: #070F34;
+    
   }
   
   .about-me-title {
-    font-family: 'Exo', sans-serif;
-    font-size: 2.5rem;
-    color: #2d3436;
+    font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+    font-size: 3.25rem; /* Font size */
+    font-weight: bold; /* Bold font */
+    background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Default gradient */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    -webkit-background-clip: text; /* Applies the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    color: transparent; /* Ensures text is transparent if -webkit isn't supported */
+    animation: gradientText 3s infinite linear; /* Applies gradient animation */
+    transition: background 0.5s ease, opacity 0.5s ease; /* Smooth hover effect */
   }
   
   .about-me-quote {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto Mono", monospace;
     font-size: 1.5rem;
-    color: #555;
-    font-style: italic;
+    color: transparent; /* Makes the text transparent for gradient */
+    font-weight: bold;
+    text-shadow: 0 0 1px #F715AB, 0 0 2px #F715AB, 0 0 10px #b271cc; /* Softer glow */
+    background: linear-gradient(90deg, #9201CB, #F715AB, #34EDF3); /* Gradient background */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    -webkit-background-clip: text; /* Applies the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    transition: transform 0.30s ease; /* Smooth scale transition */
   }
   
   .about-me-description {
     font-size: 1rem;
-    color: #333;
+    color: white;
+  }
+  /* Highlight the "God did." pending part */
+  .highlight {
+    background-color: #ffef85; /* Light yellow background for highlighting */
+    font-weight: bold; /* Make the text bold */
+    color: #9201CB; /* Custom color for the text */
+    padding: 0 2px; /* Slightly reduced padding to keep it natural */
+    border-radius: 3px; /* Slightly rounded corners for the highlight */
+    display: inline; /* Ensure it stays inline with the text */
   }
   
+  /* Custom styles for <strong> elements */
+  .custom-strong {
+    color: #F715AB; /* Change the color of <strong> elements */
+    font-weight: bold; /* Ensure the text remains bold */
+    text-decoration: underline; /* Optional: underline to emphasize */
+    transition: color 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  .custom-strong:hover {
+    color: #34EDF3; /* Change color on hover for an interactive effect */
+  }
   .about-me-image img {
     max-width: 100%;
     height: auto;
@@ -310,8 +348,8 @@
     width: 100%; /* Make sure cards take full column width */
     height: auto; /* Prevent fixed heights causing issues */
     margin: 0 auto;
-    padding: 20px;
-    border-radius: 60px;
+    padding: 10px;
+    border-radius: 50px;
     background-size: cover;
     background-repeat: no-repeat;
     transition: transform 0.6s ease, box-shadow 0.6s ease;
@@ -495,3 +533,55 @@
         box-shadow: 0 4px 40px rgba(0, 255, 255, 0.9);
     }
 }
+@keyframes wavebg {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 50% 100%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    75% {
+      background-position: 50% 0%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes flickerbg {
+    0% {
+      opacity: 1;
+    }
+    10% {
+      opacity: 0.8;
+    }
+    20% {
+      opacity: 0.4;
+    }
+    30% {
+      opacity: 0.9;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.7;
+    }
+    70% {
+      opacity: 0.2;
+    }
+    80% {
+      opacity: 0.5;
+    }
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
