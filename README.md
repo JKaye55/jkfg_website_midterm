@@ -1,5 +1,5 @@
 # jkfg_website_midterm
-![HI GIF]([https://i.imgur.com/example.gif](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.picmix.com%2Fstamp%2FSnoopyHIgifVictoriabea-2417759&psig=AOvVaw15N_Z616INKYS40CQjhD-Z&ust=1746459967746000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLCTw82Uio0DFQAAAAAdAAAAABAE))
+![Snoopy waving](https://img1.picmix.com/output/stamp/normal/9/5/7/7/2417759_e1b63.gif)
 ## About Me
 Hello! My name is **JKaye55**, and I am an aspiring web developer with a passion for designing and building functional, visually appealing websites. My journey into web development is fueled by my curiosity for technology and the desire to create meaningful digital experiences. I constantly strive to improve my skills and contribute to innovative projects that solve real-world problems.
 
