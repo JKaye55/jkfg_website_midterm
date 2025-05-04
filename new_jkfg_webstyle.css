@@ -418,12 +418,13 @@
   
   .about-me-video {
     margin-top: 40px; /* Adds spacing between the description and the video */
+    margin-left: 5PX;
   }
   
     video {
         border: 5px solid transparent; /* Transparent border to allow the gradient background to show */
         background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff); /* Neon colors */
-        background-size: 300% 300%; /* Makes the gradient larger than the element */
+        background-size: 290% 290%; /* Makes the gradient larger than the element */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for emphasis */
         animation: neon-border-animation 5s infinite linear; /* Applies the running neon animation */
       }
@@ -435,6 +436,7 @@
   
   /* Card styles for responsiveness */
   .aboutme-card {
+    margin-left: 50px;
     position: relative;  /* Allows absolute positioning inside */
     text-align: center;
     width: 100%;
@@ -665,7 +667,7 @@
 }
 .skills-interests-section h2 {
     font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
-    font-size: 8.25rem; /* Font size */
+    font-size: 6.25rem; /* Font size */
     font-weight: bold; /* Bold font */
     background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Default gradient */
     background-size: 300%; /* Makes the gradient span a larger area */
@@ -868,7 +870,7 @@
   animation: neon-glow-animation 6s infinite linear; /* Neon animation */
   border-radius: 300px; /* Optional: Add rounded corners */
   box-shadow: 0 0 15px #FF0088, 0 0 30px #ff00ff; /* Initial glowing effect */
-margin-left: -400px;
+margin-left: 00px;
 }
 
  /* Skill Labels Outside the Circle */
@@ -879,23 +881,14 @@ margin-left: -400px;
     
   }
   
-  .label {
-    margin-top: -509px;
+  /*.label {
     position: absolute;
-    font-family: "Audiowide", sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    white-space: nowrap;
-    left: 105%; /* Position all labels on the right side */
-    transform: translateY(-50%); /* Center the label vertically with respect to its position */
-  }
-  
-  /* Individual Labels Aligned Vertically */
+    top: 50%; /* Vertically center within parent */
+
+  */
+  /* Individual Labels Aligned Vertically 
   .label-1 {
     top: 10%; /* Position for HTML/CSS/PHP */
-    color: #ff6f61;
-  }
-  
   .label-2 {
     top: 30%; /* Position for NETWORKING/MYSQL */
     color: #ffd700;
@@ -927,12 +920,12 @@ margin-left: -400px;
                  0 0 40px #F715AB, /* Extended magenta glow */
                  0 0 50px #9201CB; /* Maximum magenta glow */
 }
-
+*/
 /*END OF SKILLS AND INTEREST*/
 
 /*START OF PROJECT SECTION*/
 /* Carousel Container */
-.projects-section {
+.projects-container {
   background-color: #0c0c0c;
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
   background-size: 16px 16px; /* tighter spacing */
@@ -941,7 +934,7 @@ margin-left: -400px;
   overflow: hidden;
   z-index: 1;
 }
-  .projects-section::before {
+  .projects-container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -956,7 +949,7 @@ margin-left: -400px;
     filter: blur(60px);
   
 }
-.projects-section .carousel {
+.projects-section-bg .carousel {
   position: relative;
   margin: 0 auto;
   padding: 20px;
@@ -969,7 +962,7 @@ margin-left: -400px;
 }
 
 /* Neon animated border */
-.projects-section .carousel::before {
+.projects-section-bg .carousel::before {
   content: "";
   position: absolute;
   top: -4px;
@@ -992,7 +985,7 @@ margin-left: -400px;
 }
 
 /* Carousel group */
-.projects-section .group {
+.projects-section-bg .group {
   display: flex;
   gap: 20px;
   padding-right: 20px;
@@ -1009,7 +1002,7 @@ margin-left: -400px;
 }
 
 /* Project card styles */
-.projects-section .card-carousel {
+.projects-section-bg .card-carousel {
   flex: 0 0 auto;
   width: 300px;
   border-radius: 24px;
@@ -1020,18 +1013,18 @@ margin-left: -400px;
   min-height: 400px;
 }
 
-.projects-section .card-carousel:nth-child(1) {
+.projects-section-bg .card-carousel:nth-child(1) {
   background: #FF0088;
 }
-.projects-section .card-carousel:nth-child(2) {
+.projects-section-bg .card-carousel:nth-child(2) {
   background: #FF01FB;
 }
-.projects-section .card-carousel:nth-child(3) {
+.projects-section-bg .card-carousel:nth-child(3) {
   background: #FAFF00;
 }
 
 /* Image styles */
-.projects-section .card-carousel img {
+.projects-section-bg .card-carousel img {
   width: 100% !important;
   height: 200px !important;
   object-fit: cover !important;
@@ -1040,12 +1033,12 @@ margin-left: -400px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
-.projects-section .card-carousel img:hover {
+.projects-section-bg .card-carousel img:hover {
   transform: scale(1.05);
 }
 
 /* Title */
-.projects-section .card-carousel h5 {
+.projects-section-bg .card-carousel h5 {
   font-size: 2rem;
   font-family: "Honk", system-ui;
   margin-bottom: 10px;
@@ -1053,7 +1046,7 @@ margin-left: -400px;
 }
 
 /* Text */
-.projects-section .card-carousel p {
+.projects-section-bg .card-carousel p {
   font-family: "Roboto Mono", monospace;
   font-size: 1rem;
   font-weight: bold;
@@ -1061,9 +1054,9 @@ margin-left: -400px;
 }
 
 /* Section heading */
-.projects-section h2 {
+.projects-section-bg h2 {
   font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
-  font-size: 8.25rem; /* Font size */
+  font-size: 5.25rem; /* Font size */
   font-weight: bold; /* Bold font */
   background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Default gradient */
   background-size: 300%; /* Makes the gradient span a larger area */
