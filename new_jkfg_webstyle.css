@@ -1,0 +1,1736 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Fallback font added */
+    box-sizing: border-box;
+}
+
+/* Container Styling */
+
+.fixed-top {
+  background-color: #0c0c0c;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+  background-size: 16px 16px; /* tighter spacing */
+  position: relative;
+  padding: 90px 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.fixed-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #0ff, #00f, #f0f, #0ff);
+  background-size: 600% 600%;
+  animation: galaxyWaves 10s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(60px);
+}
+
+.container-fluid {
+    background-color: #000000; /* Black background color */
+    border: 5px solid #F715AB; /* 5px solid border with pink color */
+    border-radius: 10px; /* Rounds the corners of the border */
+    box-shadow: 0 0 15px 5px rgba(247, 21, 171, 0.75); /* Glow effect around the border */
+}
+.navbar-brand {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+    font-size: 1.5rem;
+    color: transparent; /* Makes the text transparent for gradient */
+    font-weight: bold;
+    text-shadow: none; /* Remove text shadow for clarity */
+    background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Gradient background */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    -webkit-background-clip: text; /* Applies the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    animation:slidebg 5s linear infinite;
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    animation: hoverGradientText 1s infinite; /* Adds hover-specific animation */
+}
+/* Navbar Collapse Styling */
+.navbar-collapse {
+    padding: 20px; /* Reduced padding for better visuals */
+    background-size: cover;
+}
+
+/* Gradient Animation for nav-link */
+.navbar-nav {
+    font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+    font-size: 3.25rem; /* Font size */
+    font-weight: bold; /* Bold font */
+    background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Default gradient */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    -webkit-background-clip: text; /* Applies the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    color: transparent; /* Ensures text is transparent if -webkit isn't supported */
+    animation: gradientText 3s infinite linear; /* Applies gradient animation */
+    transition: background 0.5s ease, opacity 0.5s ease; /* Smooth hover effect */
+}
+/* Ensure Audiowide font is applied to all text inside navbar-nav */
+.navbar-nav .nav-link {
+    font-family: 'Audiowide', sans-serif !important; /* Ensure it applies to links */
+    font-size: 1.5rem; /* Optional: Adjust font size */
+}
+/* Navbar Navigation Styling */
+.navbar-nav {
+    gap: 150px; /* Adds spacing between nav items */
+}
+/* Hover Effect for nav-link with Animation */
+.nav-link:hover, 
+.nav-link:focus {
+    padding-left: 10px;
+    text-decoration: none; /* Removes underline */
+    opacity: 1; /* Ensure full visibility */
+    
+    /* Gradient Animation */
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #42a5f5, #66bb6a, #fdd835); /* Gradient background */
+    background-size: 300%; /* Size for gradient animation */
+    -webkit-background-clip: text; /* Applies gradient to text */
+    -webkit-text-fill-color: transparent; /* Makes text transparent to show the gradient */
+
+    /* Combined Animations */
+    animation: hoverGradientText 3s infinite linear, pulse 1.5s infinite ease-in-out; /* Both animations run together */
+
+    /* Pulse Shadow */
+    box-shadow: 0 0 0 0 rgba(255, 253, 253, 0.5); /* Initial glow effect */
+}
+
+/* Style for the toggle button icon */
+.navbar-toggler-icon {
+    padding: 3px;
+    background-size: 100%; /* Ensures the gradient fits the icon */
+    width: 24px; /* Adjust width of the icon */
+    height: 3px; /* Adjust height (thickness) of the bars */
+    border-radius: 2px; /* Optional: Rounds the edges of the bars */
+    background-color: aliceblue;
+}
+
+/* Hover Effects for the Toggle Button */
+.navbar-toggler:hover {
+    box-shadow: 0 0 10px 5px rgba(146, 1, 203, 0.5); /* Glow effect */
+    animation: pulse 1.5s infinite ease-in-out; /* Pulse animation on hover */
+}
+/* Hero Section */
+.hero-bg-wrapper {
+  margin-top: 120px;
+  background-color: #0c0c0c;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+  background-size: 16px 16px; /* tighter spacing */
+  position: relative;
+  padding: 90px 0;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: -90px;
+}
+
+.hero-bg-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #0ff, #00f, #f0f, #0ff);
+  background-size: 600% 600%;
+  animation: galaxyWaves 10s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(60px);
+}
+
+
+.hero-section {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  padding: 30px !important;
+  text-align: center !important;
+  background: #070F34 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 20px #F715AB !important;
+  perspective: 1200px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.card-hero {
+  width: 550px !important;
+  height: 850px !important;
+  margin: 0 auto !important;
+  perspective: 1000px !important;
+  cursor: pointer !important;
+  border-radius: 0.5rem !important;
+  background: #F715AB;
+  border: 4px solid transparent;
+  box-shadow: 0 4px 10px #F715AB;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Card Inner */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* Preserve 3D effect */
+    transition: transform 0.6s ease-in-out; /* Smooth flip transition */
+}
+
+.card-hero:hover .card-inner {
+    transform: rotateY(180deg); /* Flip card on hover */
+}
+
+/* Card Faces */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide back face when flipped */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    border-radius: 0.5rem; /* Match rounded corners */
+    text-align: center;
+    padding: 1rem; /* Add padding to content */
+    box-shadow: 0 4px 10px #0313A6; /* Subtle shadow for depth */
+}
+
+/* Front Face */
+.card-front {
+    background: #5132a7;
+    border: 1px solid #020202;
+    color: white;
+}
+.card-front h3{
+    font-family: 'Audiowide', sans-serif;
+    gap: 20px;
+}
+/* Back Face */
+.card-back {
+    font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+    font-size: 3.25rem; /* Font size */
+    font-weight: bold; /* Bold font */
+    background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Neon gradient */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    animation: wave 6s infinite ease-in-out;
+    border-radius: 0.5rem; /* Rounded corners */
+    transform: rotateY(180deg); /* Flip the back card */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    color: white; /* Text color */
+}
+
+/* Image Styling */
+.card-back img {
+    width: 500px; /* Ensure width and height are equal */
+    height: 460px; /* Ensure width and height are equal */
+    border-radius: 50%; /* Use 50% to create a perfect circle */
+    border: 5px solid white; /* Add white border */
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.2); /* Add shadow */
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+}
+
+/* Back Text Styling */
+.card-back h1 {
+    font-family: "VT323", monospace;
+    font-size: 1.2rem; /* Adjusted font size */
+    margin-bottom: 1rem;
+}
+.card-back h4{
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "MORF" 15,
+      "SHLN" 50;
+  
+}
+
+.card-back p {
+    font-family: monospace;
+    font-size: 1rem; /* Adjusted font size for readability */
+    margin-bottom: 1.5rem;
+    line-height: 1.5; /* Improved line spacing */
+}
+
+      /* Call-to-Action Button */
+/* Default State: Lock Icon */
+/* Button styles */
+.btn-light {
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center; /* Center icon and text vertically */
+    text-decoration: none; /* Remove underline */
+    color: #8b5cf6;
+    background: white;
+    border: none;
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-light:hover {
+    background: #6a4bbd; /* Darker violet on hover */
+    color: white; /* Change text color on hover */
+}
+
+/* Default Icon State */
+.icon {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-right: 8px; /* Space between icon and text */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth animation for rotation and neon effect */
+}
+
+/* Default Icon State: Lock */
+.icon::before {
+    content: "\F47B"; /* Unicode for lock icon */
+    font-family: "Bootstrap Icons"; /* Ensure proper font family */
+    color: #8b5cf6; /* Default color */
+}
+
+/* Hover State: Unlock Icon with Neon Effect */
+.btn-light:hover .icon::before {
+    content: "\F600"; /* Unicode for unlock icon */
+    font-family: "Bootstrap Icons"; /* Ensure proper font family */
+    transform: rotate(360deg); /* Add rotation animation */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth animation */
+    color: #9201CB; /* Neon green color for the icon */
+    text-shadow: 
+        0 0 5px #F715AB, 
+        0 0 10px #F715AB, 
+        0 0 20px #F715AB, 
+        0 0 40px #F715AB, 
+        0 0 80px #F715AB; /* Glowing neon effect */
+}
+
+.card-back a{
+    font-family: "VT323", monospace;
+    font-size: 1.2rem;
+}
+/* About Me Section */
+.about-me-section {
+  background-color: #0c0c0c;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+  background-size: 16px 16px; /* tighter spacing */
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.about-me-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #0ff, #00f, #f0f, #0ff);
+  background-size: 600% 600%;
+  animation: galaxyWaves 10s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(60px);
+}
+  .about-me-title {
+    font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+    font-size: 8.25rem; /* Font size */
+    font-weight: bold; /* Bold font */
+    background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Default gradient */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    -webkit-background-clip: text; /* Applies the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    color: transparent; /* Ensures text is transparent if -webkit isn't supported */
+    animation: gradientText 3s infinite linear; /* Applies gradient animation */
+    transition: background 0.5s ease, opacity 0.5s ease; /* Smooth hover effect */
+  }
+  
+  .about-me-quote {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto Mono", monospace;
+    font-size: 2.5rem;
+    color: transparent; /* Makes the text transparent for gradient */
+    font-weight: bold;
+    text-shadow: 0 0 1px #F715AB, 0 0 2px #F715AB, 0 0 10px #b271cc; /* Softer glow */
+    background: linear-gradient(90deg, #9201CB, #F715AB, #34EDF3); /* Gradient background */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    -webkit-background-clip: text; /* Applies the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    transition: transform 0.30s ease; /* Smooth scale transition */
+  }
+  
+  .about-me-description {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    color: white;
+    margin-top: 20px; /* Adds spacing above the description */
+    font-size: 1.4rem; /* Adjusts font size */
+    line-height: 1.6; /* Improves readability */
+  }
+  /* Highlight the "God did." pending part */
+  .highlight {
+    background-color: #ffef85; /* Light yellow background for highlighting */
+    font-weight: bold; /* Make the text bold */
+    color: #9201CB; /* Custom color for the text */
+    padding: 0 2px; /* Slightly reduced padding to keep it natural */
+    border-radius: 3px; /* Slightly rounded corners for the highlight */
+    display: inline; /* Ensure it stays inline with the text */
+  }
+  
+  /* Custom styles for <strong> elements */
+  .custom-strong {
+    color: #F715AB; /* Change the color of <strong> elements */
+    font-weight: bold; /* Ensure the text remains bold */
+    text-decoration: underline; /* Optional: underline to emphasize */
+    transition: color 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  .custom-strong:hover {
+    color: #34EDF3; /* Change color on hover for an interactive effect */
+  }
+ /* .about-me-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }*/
+  
+  .about-me-video {
+    margin-top: 40px; /* Adds spacing between the description and the video */
+  }
+  
+    video {
+        border: 5px solid transparent; /* Transparent border to allow the gradient background to show */
+        background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff); /* Neon colors */
+        background-size: 300% 300%; /* Makes the gradient larger than the element */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for emphasis */
+        animation: neon-border-animation 5s infinite linear; /* Applies the running neon animation */
+      }
+      
+.row-am {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  /* Card styles for responsiveness */
+  .aboutme-card {
+    position: relative;  /* Allows absolute positioning inside */
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.6); /* optional */
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    transform: perspective(900px) rotateX(80deg) translateY(-200px) translateZ(-100px);
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;  /* Keep all content inside the card */
+    min-height: 300px; /* Adjust card height if needed */
+  }
+  
+  /* Hover behavior */
+ /* Hover behavior for About Me cards */
+.aboutme-card:hover {
+  transform: perspective(900px) rotateX(0deg) translateY(0) translateZ(0);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+/* Image inside the card */
+.aboutme-card img {
+  transform: translateY(15px);
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 15px;
+  border: 3px solid #020202;
+  margin: 10px auto 6px;
+  display: block;
+}
+
+/* Headings inside About Me cards */
+.aboutme-card h3 {
+  font-size: 1.3rem;
+  font-family: 'Audiowide', sans-serif;
+  color: #ffffff;
+  text-shadow: 0 0 2px rgb(255, 255, 255);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  margin: 0;
+}
+
+/* Paragraphs inside About Me cards */
+.aboutme-description p {
+  font-family: 'Roboto Mono', sans-serif;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+}
+
+/* Link styling */
+.aboutme-description a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.aboutme-description a:hover {
+  color: #0056b3;
+  text-shadow: 0 0 5px #007bff, 0 0 10px #0056b3;
+  text-decoration: underline;
+}
+
+/* Unique card styles */
+.aboutme-card1 {
+  background: linear-gradient(90deg, #000300, #FF0088, #FF01FB, #FAFF00, #56FFCA, #ff00ff);
+  background-size: 400% 400%;
+  animation: neon-glow-animation 6s infinite linear;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #FF0088, 0 0 30px #ff00ff;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+.aboutme-card2 {
+  background: linear-gradient(90deg, #00142F, #0022FF, #006FFC, #00BBF9, #00F5D4);
+  background-size: 400% 400%;
+  animation: pokemon-glow-animation 6s infinite linear;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00142F, 0 0 40px #00F5D4;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+.aboutme-card4 {
+  background: linear-gradient(90deg, #110038, #4B0089, #9900FF,#DD13D7, #F72585);
+  background-size: 400% 400%;
+  animation: pokemon-glow-animation-3 6s infinite linear;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 82, 82, 0.8), 0 0 40px rgba(179, 57, 57, 0.6);
+  padding: 20px;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  border: 5px solid rgba(255, 255, 255, 0.6);
+}
+
+.aboutme-card4 h3 {
+  font-size: 1.8rem;
+  color: #fdfdfd;
+}
+
+.aboutme-card4 dl dt {
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.aboutme-card4 dl dd {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+.aboutme-card4 img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+
+          
+/* Button styles FOR CARD 3 */
+.btn-dark {
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center; /* Center icon and text vertically */
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* Default text color */
+    background: violet; /* Default background color */
+    border: none; /* Remove border */
+    font-size: 1.2rem; /* Slightly larger text size */
+    padding: 0.8rem 1.6rem; /* Padding for the button */
+    border-radius: 0.5rem; /* Rounded corners */
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-dark:hover {
+    background: #ff69b4; /* Soft pink on hover */
+    color: white; /* Change text color on hover */
+    box-shadow: 0px 0px 20px 5px rgba(255, 105, 180, 0.7); /* Glowing hover effect */
+}
+
+/* Larger Icon */
+.heart {
+    display: inline-block;
+    font-size: 2.5rem; /* Larger icon size */
+    margin-right: 20px; /* Space between icon and text */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth animation for scaling and glow effect */
+}
+
+/* Default Icon: Heart */
+.heart::before {
+    content: "\F737"; /* Unicode for heart icon */
+    font-family: "Bootstrap Icons"; /* Ensure proper font family */
+    color: #ff4081; /* Default pink heart color */
+}
+
+/* Hover State: Envelope Icon */
+.btn-dark:hover .heart::before {
+    content: "\F73C"; /* Unicode for envelope icon */
+    font-family: "Bootstrap Icons"; /* Ensure proper font family */
+    transform: scale(1.2); /* Slight zoom-in effect */
+    color: #ffffff; /* Change color to white on hover */
+    text-shadow: 
+        0 0 5px #ffffff, 
+        0 0 10px #ffffff, 
+        0 0 20px #ff69b4, 
+        0 0 40px #ff69b4; /* Glowing neon effect */
+}
+
+.card3-am a{
+    font-family: "VT323", monospace;
+    font-size: 2.5rem;
+}
+
+ /* .card4 {
+    background: linear-gradient(rgb(34, 193, 195), rgb(253, 187, 45));
+  }*/
+  
+/*  .card5 {
+    background: linear-gradient(rgb(29, 80, 140), rgb(34, 193, 195));
+  } */
+/*END OF ABOUT ME*/
+
+/* Skills and Interests Section */
+
+.skills-interests-section {
+  background-color: #0c0c0c;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+  background-size: 16px 16px; /* tighter spacing */
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.skills-interests-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #0ff, #00f, #f0f, #0ff);
+  background-size: 600% 600%;
+  animation: galaxyWaves 10s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(60px);
+}
+.skills-interests-section h2 {
+    font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+    font-size: 8.25rem; /* Font size */
+    font-weight: bold; /* Bold font */
+    background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Default gradient */
+    background-size: 300%; /* Makes the gradient span a larger area */
+    -webkit-background-clip: text; /* Applies the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    color: transparent; /* Ensures text is transparent if -webkit isn't supported */
+    animation: gradientText 3s infinite linear; /* Applies gradient animation */
+    transition: background 0.5s ease, opacity 0.5s ease; /* Smooth hover effect */
+  }
+  .skills-interests-section-column li {
+    font-family: "Monofett", monospace;
+    font-weight: 400;
+    list-style-type: none;
+    padding-left: 0;
+    color: #F715AB;
+    font-size: 4rem;
+    gap: 4px;
+  }
+
+  .skills-interests-section-column h5 strong{
+    font-family: "VT323", monospace;
+    color: #00F5D4;
+    font-size: 5.2rem;
+    margin-left: 56px;
+  }
+  
+  .container-interest {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(1200px, 3fr)); /* FIXED: comma was missing */
+    gap: 100px; /* 'grid-gap' is deprecated, use 'gap' */
+    margin: auto;
+    padding: 20px;
+    width: 1200px;
+    height: 100;
+    width: 100%;
+  }
+  
+  .card-interest {
+    position: relative;
+    height: auto; /* Changed from fixed 1000px to auto for responsiveness */
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.2s ease;
+    background: white;
+    padding: 20px;
+  }
+  
+ 
+    .content h4 {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      font-size: 3rem;
+      color: #fff; /* Text color */
+      text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+      animation: neonGlow 2s infinite alternate;
+    }
+    
+  .content ul li{
+    color: #34EDF3; 
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: "Roboto Mono", monospace ;
+    z-index: 1;
+  }
+  .card-interest .face-card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-interest .face-title {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  .card-interest .face-title .content {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .card-interest .face-title .content-title ul {
+    margin: 10px 0 0;
+    padding-left: 10px;
+    list-style-type: disc;
+    font-size: 1rem;
+  }
+  
+  .card-interest .face-card{
+    background: #111;
+    transition: 0.50s;
+  }
+  
+  .card-interest:nth-child(1) .face-card {
+    background: linear-gradient(45deg, #3503ad, #f7308c);
+    border-radius: 15px;
+  }
+  
+  .card-interest:nth-child(2) .face-card {
+    background: linear-gradient(45deg, #ccff00, #09afff);
+    border-radius: 15px;
+  }
+  
+  .card-interest:nth-child(3) .face-card{
+    background: linear-gradient(45deg, #e91e63, #ffeb3b);
+    border-radius: 15px;
+  }
+  
+  .card-interest:hover .face-card {
+    height: 70px;
+    border-radius: 0 0 15px 15px;
+  }
+  
+  .card-interest .face-card:before { /*CONTENT OF THE OUTSIDE PORTION*/
+    content:'INTEREST';
+    font-family: "VT323", monospace;
+    position: absolute;
+    color: #000000;
+    font-size: 1.8rem;
+    margin-left: -32px;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(113, 49, 173, 0.1);
+    border-radius: 15px 0 0 15px;
+  }
+  
+  .card-interest .face-card .face-footer { /*OUTSIDE OF THE CARD*/
+    margin: 0;
+    padding: 0;
+    font-size: 10em;
+    color: #000000;
+    transition: 0.255s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-interest:hover .face-card h2 { /*INITIAL WHEN HOVER*/
+    font-size: 2em;
+  }
+  /*END OF SKILLS AND INTEREST SECTION*/
+ 
+
+
+  
+  .progress-circle {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(
+      #ff6f61 0% 20%,          /* HTML/CSS/PHP (20%) */
+      #ffd700 20% 45%,         /* NETWORKING/MYSQL (25%) */
+      #4caf50 45% 70%,         /* JAVA (25%) */
+      #8b5cf6 70% 90%,         /* JAVASCRIPT (20%) */
+      #ff8c00 90% 100%         /* C++ (10%) */
+    );
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+     /* Carousel Animation */
+  animation: carousel-rotation 10s linear infinite;
+  }
+  
+  .progress-inner-circle {
+    position: absolute; /* Ensure it's positioned relative to the progress-circle */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Shift the element back by 50% of its width and height */
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #ff6f61, #ffd700, #4caf50, #8b5cf6, #ff8c00); /* Static gradient */
+    background-size: 300% 300%; /* Required for animated gradient */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Fully center the text inside the inner circle */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for gradient */
+    animation: gradient-shift 6s infinite; /* Add animation for gradient movement */
+    
+}
+  
+  .progress-inner-circle span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Text color to contrast with gradient */
+    z-index: 1; /* Ensure text is above the gradient */
+  }
+  
+  .progress-text {
+    font-size: 1rem; /* Adjust the size as needed */
+    font-weight: bold;
+    color: #a5198e;
+  }
+.progress-container{
+  background: linear-gradient(90deg, #000300, #FF0088, #FF01FB, #FAFF00, #56FFCA, #ff00ff); /* Neon gradient colors */
+  background-size: 400% 400%; /* Makes the gradient dynamic */
+  animation: neon-glow-animation 6s infinite linear; /* Neon animation */
+  border-radius: 300px; /* Optional: Add rounded corners */
+  box-shadow: 0 0 15px #FF0088, 0 0 30px #ff00ff; /* Initial glowing effect */
+margin-left: -400px;
+}
+
+ /* Skill Labels Outside the Circle */
+.labels {
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    
+  }
+  
+  .label {
+    margin-top: -509px;
+    position: absolute;
+    font-family: "Audiowide", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    left: 105%; /* Position all labels on the right side */
+    transform: translateY(-50%); /* Center the label vertically with respect to its position */
+  }
+  
+  /* Individual Labels Aligned Vertically */
+  .label-1 {
+    top: 10%; /* Position for HTML/CSS/PHP */
+    color: #ff6f61;
+  }
+  
+  .label-2 {
+    top: 30%; /* Position for NETWORKING/MYSQL */
+    color: #ffd700;
+  }
+  
+  .label-3 {
+    top: 50%; /* Position for JAVA */
+    color: #4caf50;
+  }
+  
+  .label-4 {
+    top: 70%; /* Position for JAVASCRIPT */
+    color: #8b5cf6;
+  }
+  
+  .label-5 {
+    top: 90%; /* Position for C++ */
+    color: #ff8c00;
+  }
+  .labels h1 {
+    margin-left: -127px;
+    font-family: "VT323", monospace;
+    font-size: 4.0rem;
+    color: #fff; /* Text color */
+    text-shadow: 0 0 5px #fff,   /* Inner white glow */
+                 0 0 10px #fff,  /* Medium white glow */
+                 0 0 20px #9201CB, /* Outer magenta glow */
+                 0 0 30px #F715AB, /* Further magenta glow */
+                 0 0 40px #F715AB, /* Extended magenta glow */
+                 0 0 50px #9201CB; /* Maximum magenta glow */
+}
+
+/*END OF SKILLS AND INTEREST*/
+
+/*START OF PROJECT SECTION*/
+/* Carousel Container */
+.projects-section {
+  background-color: #0c0c0c;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+  background-size: 16px 16px; /* tighter spacing */
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+  z-index: 1;
+}
+  .projects-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, #0ff, #00f, #f0f, #0ff);
+    background-size: 600% 600%;
+    animation: galaxyWaves 10s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(60px);
+  
+}
+.projects-section .carousel {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex: 0 0 100%;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Neon animated border */
+.projects-section .carousel::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  z-index: -1;
+  border-radius: 24px;
+  background: linear-gradient(45deg, #0ff, #00f, #f0f, #0ff);
+  background-size: 400% 400%;
+  animation: neonBorder 10s linear infinite;
+  filter: blur(6px);
+}
+
+/* Border animation keyframes */
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Carousel group */
+.projects-section .group {
+  display: flex;
+  gap: 20px;
+  padding-right: 20px;
+  will-change: transform;
+  animation: scrolling 10s linear infinite;
+}
+.projects-section .carousel:hover .group {
+  animation-play-state: paused;
+}
+
+@keyframes scrolling {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Project card styles */
+.projects-section .card-carousel {
+  flex: 0 0 auto;
+  width: 300px;
+  border-radius: 24px;
+  padding: 20px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 20px 0;
+  text-align: center;
+  min-height: 400px;
+}
+
+.projects-section .card-carousel:nth-child(1) {
+  background: #FF0088;
+}
+.projects-section .card-carousel:nth-child(2) {
+  background: #FF01FB;
+}
+.projects-section .card-carousel:nth-child(3) {
+  background: #FAFF00;
+}
+
+/* Image styles */
+.projects-section .card-carousel img {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+.projects-section .card-carousel img:hover {
+  transform: scale(1.05);
+}
+
+/* Title */
+.projects-section .card-carousel h5 {
+  font-size: 2rem;
+  font-family: "Honk", system-ui;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+/* Text */
+.projects-section .card-carousel p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Section heading */
+.projects-section h2 {
+  font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+  font-size: 8.25rem; /* Font size */
+  font-weight: bold; /* Bold font */
+  background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Default gradient */
+  background-size: 300%; /* Makes the gradient span a larger area */
+  -webkit-background-clip: text; /* Applies the gradient to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+  color: transparent; /* Ensures text is transparent if -webkit isn't supported */
+  animation: gradientText 3s infinite linear; /* Applies gradient animation */
+  transition: background 0.5s ease, opacity 0.5s ease; /* Smooth hover effect */
+}
+
+@keyframes gradientText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/*END OF PROJECTS*/
+
+
+/* Contact Me Section Custom Styling */
+.contact-me-container {
+  background-color: #0c0c0c;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+  background-size: 16px 16px; /* tighter spacing */
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact-me-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #0ff, #00f, #f0f, #0ff);
+  background-size: 600% 600%;
+  animation: galaxyWaves 10s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(60px);
+}
+
+
+@keyframes galaxyWaves {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Background grid + padding */
+.contact-me-container {
+  background-color: #0c0c0c;
+  background-image: radial-gradient(#222 1px, transparent 1px);
+  background-size: 20px 20px;
+  padding: 60px 0;
+}
+
+/* Cyberpunk flickering container box */
+.cyberpunk-box {
+  position: relative;
+  border: 2px solid #00fff7;
+  border-radius: 12px;
+  padding: 30px;
+  background: rgba(10, 10, 10, 0.9);
+  animation: border-flicker 1s infinite alternate;
+  box-shadow:
+    0 0 10px #00fff7,
+    0 0 20px #00fff7 inset,
+    0 0 15px rgba(0, 255, 247, 0.5);
+}
+
+.cyberpunk-box::before,
+.cyberpunk-box::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00fff7;
+}
+
+.cyberpunk-box::before {
+  top: -10px;
+  left: -10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.cyberpunk-box::after {
+  bottom: -10px;
+  right: -10px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Flickering title */
+.cyberpunk-title {
+  font-family: 'Audiowide', sans-serif; /* Ensure the font name matches the imported font */
+  font-size: 2.25rem; /* Font size */
+  font-weight: bold; /* Bold font */
+  background: linear-gradient(90deg, #070F34, #0313A6, #9201CB, #F715AB, #34EDF3); /* Default gradient */
+  background-size: 300%; /* Makes the gradient span a larger area */
+  -webkit-background-clip: text; /* Applies the gradient to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+  color: transparent; /* Ensures text is transparent if -webkit isn't supported */
+  animation: gradientText 3s infinite linear; /* Applies gradient animation */
+  transition: background 0.5s ease, opacity 0.5s ease; /* Smooth hover effect */
+}
+
+/* Labels */
+.cyberpunk-label {
+  color: #00fff7;
+  font-weight: bold;
+}
+
+/* Inputs */
+.cyberpunk-input {
+  background-color: #1a1a1a;
+  border: 2px solid #00fff7;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px #00fff7;
+}
+
+.cyberpunk-input:focus {
+  background-color: #111;
+  border-color: #0ff;
+  box-shadow: 0 0 10px #00fff7;
+}
+
+/* Unique neon glitch gradient button */
+.cyberpunk-btn {
+  font-family: "Honk", system-ui;
+  background: linear-gradient(135deg, #00fff7, #ff00cc);
+  border-radius: 8px;
+  padding: 12px;
+  border: none;
+  box-shadow:
+    0 0 10px #00fff7,
+    0 0 20px #ff00cc,
+    inset 0 0 10px #ff00cc;
+  transition: all 0.3s ease;
+}
+
+.cyberpunk-btn:hover {
+  background: linear-gradient(135deg, #ff00cc, #00fff7);
+  color: #fff;
+  box-shadow:
+    0 0 20px #ff00cc,
+    0 0 30px #00fff7,
+    inset 0 0 20px #ff00cc;
+  animation: font-flicker-fast 0.7s infinite;
+}
+
+@keyframes font-flicker-fast {
+  0%, 100% { opacity: 1; text-shadow: 0 0 7px #ff00cc, 0 0 14px #00fff7; }
+  50% { opacity: 0.5; text-shadow: 0 0 2px #00fff7; }
+}
+
+
+/* Flicker keyframe for neon glow effect */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+  }
+}
+
+/* Flickering border animation */
+@keyframes border-flicker {
+  0%, 100% {
+    box-shadow:
+      0 0 10px #00fff7,
+      0 0 20px #00fff7 inset,
+      0 0 15px rgba(0, 255, 247, 0.5);
+  }
+  50% {
+    box-shadow:
+      0 0 5px #00fff7,
+      0 0 10px #00fff7 inset,
+      0 0 5px rgba(0, 255, 247, 0.3);
+  }
+}
+
+/* Flicker effect for neon */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.5;
+  }
+}
+
+/* Follow Me Section Custom Styling */
+.follow-me-container {
+  background-color: #0c0c0c;
+  padding: 30px 0;
+  position: relative;
+}
+
+.social-icons a {
+  color: #00fff7;
+  transition: transform 0.4s ease, color 0.4s ease;
+  text-shadow: 0 0 8px #00fff7;
+  animation: float 3s ease-in-out infinite;
+}
+
+.social-icons a:hover {
+  transform: scale(1.3) rotate(5deg);
+  color: #ff00cc;
+  text-shadow: 0 0 15px #ff00cc, 0 0 30px #ff00cc;
+}
+
+/* Floating animation effect */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/*END OF CONTACT ME */
+
+
+/* Footer Background */
+.cyberpunk-footer {
+  background: linear-gradient(90deg, #0f0f0f 0%, #111 100%);
+  border-top: 4px solid #0ff;
+  border-image: linear-gradient(90deg, #f0f, #0ff, #f0f) 1;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 15px #0ff, 0 0 25px #f0f inset;
+}
+
+/* Glitch Text Base */
+.glitch-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.3rem;
+  color: #0ff;
+  position: relative;
+  display: inline-block;
+  text-shadow:
+    0 0 2px #0ff,
+    0 0 4px #0ff,
+    0 0 6px #f0f;
+  animation: glitch-flicker 2s infinite;
+}
+
+/* Pseudo-elements for glitch layers */
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #f0f;
+  background: transparent;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch-text::before {
+  animation: glitch-top 1.5s infinite linear alternate-reverse;
+  color: #f0f;
+}
+
+.glitch-text::after {
+  animation: glitch-bottom 1.5s infinite linear alternate-reverse;
+  color: #0ff;
+}
+
+/* Glitch Flicker */
+@keyframes glitch-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.1;
+  }
+}
+
+/* Glitch Top */
+@keyframes glitch-top {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(0, 0);
+  }
+  5% {
+    clip: rect(0, 9999px, 5px, 0);
+    transform: translate(-2px, -2px);
+  }
+  10% {
+    clip: rect(0, 9999px, 8px, 0);
+    transform: translate(2px, -1px);
+  }
+  15%, 100% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: none;
+  }
+}
+
+/* Glitch Bottom */
+@keyframes glitch-bottom {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(0, 0);
+  }
+  5% {
+    clip: rect(10px, 9999px, 20px, 0);
+    transform: translate(2px, 2px);
+  }
+  10% {
+    clip: rect(15px, 9999px, 25px, 0);
+    transform: translate(-1px, 1px);
+  }
+  15%, 100% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
+
+  /* Responsive Adjustments */
+
+  @media (min-width: 768px) {
+    .card {
+      width: 45vw;
+      max-width: 500px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .card {
+      width: 30vw;
+      max-width: 400px;
+    }
+  }
+  
+  
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .tourist-card img {
+      width: 150px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .tourist-card img {
+      width: 130px;
+    }
+  
+    .tourist-card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .tourist-card p {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container-interest {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+
+
+
+/* Gradient Animation Keyframes */
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hover-Specific Gradient Animation Keyframes */
+@keyframes hoverGradientText {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        gap: 50px; /* Reduced gap for smaller screens */
+    }
+
+    .navbar-collapse {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+}
+@keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+  }
+ /* Pulse Animation Keyframes */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 #9201CB; /* Start with no shadow */
+    }
+    50% {
+        box-shadow: 0 0 10px 5px #F715AB; /* Midway with a glow */
+    }
+    100% {
+        box-shadow: 0 0 0 0 #34EDF3; /* End with no shadow */
+    }
+}
+
+/* Gradient background animation */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Mid position */
+    }
+    100% {
+        background-position: 0% 50%; /* End position */
+    }
+}
+
+@keyframes wave {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes glow {
+    from {
+        box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 4px 40px rgba(0, 255, 255, 0.9);
+    }
+}
+@keyframes wavebg {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 50% 100%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    75% {
+      background-position: 50% 0%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes flickerbg {
+    0% {
+      opacity: 1;
+    }
+    10% {
+      opacity: 0.8;
+    }
+    20% {
+      opacity: 0.4;
+    }
+    30% {
+      opacity: 0.9;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.7;
+    }
+    70% {
+      opacity: 0.2;
+    }
+    80% {
+      opacity: 0.5;
+    }
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /* Keyframes for the running neon animation */
+@keyframes neon-border-animation {
+    0% {
+      background-position: 0% 50%; /* Start position of the gradient */
+    }
+    50% {
+      background-position: 100% 50%; /* Middle position of the gradient */
+    }
+    100% {
+      background-position: 0% 50%; /* End position of the gradient */
+    }
+  }
+  /* Keyframes for the glowing neon animation */
+@keyframes neon-glow-animation {
+    0% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+    }
+    25% {
+      background-position: 50% 50%;
+      box-shadow: 0 0 15px rgba(255, 115, 0, 0.8), 0 0 30px rgba(255, 115, 0, 0.6);
+    }
+    50% {
+      background-position: 100% 50%;
+      box-shadow: 0 0 15px rgba(255, 238, 0, 0.8), 0 0 30px rgba(255, 238, 0, 0.6);
+    }
+    75% {
+      background-position: 50% 50%;
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.8), 0 0 30px rgba(57, 255, 20, 0.6);
+    }
+    100% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.6);
+    }
+  }
+  /* Keyframes for the glowing neon animation */
+@keyframes pokemon-glow-animation {
+    0% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 115, 0, 0.6);
+    }
+    25% {
+      background-position: 50% 50%;
+      box-shadow: 0 0 20px rgba(255, 115, 0, 0.8), 0 0 40px rgba(255, 238, 0, 0.6);
+    }
+    50% {
+      background-position: 100% 50%;
+      box-shadow: 0 0 20px rgba(255, 238, 0, 0.8), 0 0 40px rgba(57, 255, 20, 0.6);
+    }
+    75% {
+      background-position: 50% 50%;
+      box-shadow: 0 0 20px rgba(57, 255, 20, 0.8), 0 0 40px rgba(0, 191, 255, 0.6);
+    }
+    100% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.6);
+    }
+  }
+  /* Keyframes for the glowing neon animation */
+@keyframes pokemon-glow-animation-3 {
+    0% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 20px rgba(255, 82, 82, 0.8), 0 0 40px rgba(179, 57, 57, 0.6);
+    }
+    25% {
+      background-position: 50% 50%;
+      box-shadow: 0 0 20px rgba(179, 57, 57, 0.8), 0 0 40px rgba(255, 82, 82, 0.6);
+    }
+    50% {
+      background-position: 100% 50%;
+      box-shadow: 0 0 20px rgba(255, 82, 82, 0.8), 0 0 40px rgba(179, 57, 57, 0.6);
+    }
+    75% {
+      background-position: 50% 50%;
+      box-shadow: 0 0 20px rgba(179, 57, 57, 0.8), 0 0 40px rgba(255, 82, 82, 0.6);
+    }
+    100% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 20px rgba(255, 82, 82, 0.8), 0 0 40px rgba(179, 57, 57, 0.6);
+    }
+  }
+  /* Keyframes for Neon Animation */
+@keyframes neon-glow {
+    0% {
+      border-color: #ff6f61; /* Start with red */
+      box-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61;
+    }
+    25% {
+      border-color: #ffd700; /* Transition to yellow */
+      box-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+    }
+    50% {
+      border-color: #4caf50; /* Transition to green */
+      box-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50, 0 0 30px #4caf50;
+    }
+    75% {
+      border-color: #8b5cf6; /* Transition to purple */
+      box-shadow: 0 0 10px #8b5cf6, 0 0 20px #8b5cf6, 0 0 30px #8b5cf6;
+    }
+    100% {
+      border-color: #ff6f61; /* Return to red */
+      box-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61;
+    }
+  }
+  /* Keyframes for Gradient Animation */
+@keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  /* Keyframes for Carousel Rotation */
+@keyframes carousel-rotation {
+    0% {
+      transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+      transform: rotate(360deg); /* Complete one full rotation */
+    }
+  }
+  /* Keyframes for Neon Glow Effect */
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+  }
+  50% {
+    text-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #ff0, 0 0 50px #f0f, 0 0 100px #f0f, 0 0 110px #f0f, 0 0 120px #f0f, 0 0 200px #f0f;
+  }
+  100% {
+    text-shadow: 0 0 5px #f00, 0 0 10px #f00, 0 0 20px #f00, 0 0 40px #ff0, 0 0 80px #ff0, 0 0 90px #ff0, 0 0 100px #ff0, 0 0 150px #ff0;
+  }
+}
